@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    147deg,
+    rgba(0, 0, 0, 0.97) 25%,
+    rgba(0, 0, 128, 0.92) 100%
+  );
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, .heading {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(
+    147deg,
+    rgba(0, 0, 0, 1) 28%,
+    rgba(0, 0, 128, 1) 61%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding-top: 20vh;
+  font-size: 3rem;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* ─── Services Section Wrapper ─── */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #1a1a1a;
+}
+
+/* ─── Section Header ─── */
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-header .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888780;
+  margin: 0 0 0.5rem;
+}
+
+.section-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.4rem;
+  line-height: 1;
+  color: #fff;
+}
+
+.section-header p {
+  font-size: 14px;
+  color: #888780;
+  margin: 0;
+  font-weight: 300;
+}
+
+.section-header .accent-line {
+  width: 48px;
+  height: 3px;
+  background: #D85A30;
+  margin: 0.75rem 0 1rem;
+  border-radius: 2px;
+}
+
+/* ─── Cards Grid ─── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* ─── Individual Card ─── */
+.card {
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+/* ─── Card Image Area ─── */
+.card-img-wrap {
+  position: relative;
+  height: 165px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F1EFE8;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Card Badge (Popular / New / Premium) ─── */
+.card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #FAECE7;
+  color: #993C1D;
+  border: 0.5px solid #F0997B;
+}
+
+.card-badge.badge-new {
+  background: #E6F1FB;
+  color: #185FA5;
+  border-color: #85B7EB;
+}
+
+.card-badge.badge-premium {
+  background: #FBEAF0;
+  color: #72243E;
+  border-color: #ED93B1;
+}
+
+/* ─── Card Body ─── */
+.card-body {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.card-category {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #888780;
+  margin: 0 0 4px;
+}
+
+.card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0 0 6px;
+  line-height: 1.1;
+  color: #1a1a1a;
+}
+
+/* ─── Star Rating ─── */
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #EF9F27;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.rating-text {
+  font-size: 11px;
+  color: #888780;
+}
+
+/* ─── Feature Tags ─── */
+.card-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #F1EFE8;
+  color: #5F5E5A;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  font-weight: 400;
+}
+
+/* ─── Card Description ─── */
+.card p.card-desc {
+  font-size: 12px;
+  color: #888780;
+  font-weight: 300;
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+/* ─── Card Footer (Price + CTA) ─── */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  margin-top: 2px;
+}
+
+.card-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 10px;
+  color: #888780;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1px;
+}
+
+.price-value {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Book Now Button ─── */
+.card button {
+  background: #D85A30;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease, transform 0.1s ease;
+  letter-spacing: 0.01em;
+}
+
+.card button:hover {
+  background: #c24e27;
+}
+
+.card button:active {
+  transform: scale(0.97);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Dark Mode Support ─── */
+@media (prefers-color-scheme: dark) {
+  .section {
+    color: #f0efe8;
+  }
+
+  .section-header h2,
+  .card h3,
+  .price-value {
+    color: #f0efe8;
+  }
+
+  .card {
+    background: #2c2c2a;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .card:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .card-img-wrap {
+    background: #444441;
+  }
+
+  .tag {
+    background: #444441;
+    color: #B4B2A9;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .card-footer {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}

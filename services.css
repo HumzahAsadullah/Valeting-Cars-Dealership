@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    147deg,
+    rgba(0, 0, 0, 0.97) 28%,
+    rgba(0, 0, 128, 0.92) 100%
+  );
+
+}
+
+.section {
+  padding-top: 100px !important;
+}

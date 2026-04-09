@@ -1,0 +1,404 @@
+/* ── FONTS ── */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap");
+
+/* ── RESET ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* ───────────────────────────── */
+/* ── HEADER / NAVBAR ── */
+/* ───────────────────────────── */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 2.5rem;
+  height: 70px;
+
+  background: linear-gradient(
+    147deg,
+    rgba(0, 0, 0, 0.97) 28%,
+    rgba(0, 0, 128, 0.92) 100%
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(200, 100, 255, 0.15);
+  transition: box-shadow 0.3s, z-index 0.2s;
+}
+
+.nav-bar.scrolled {
+  z-index: 1000;
+  box-shadow: 0 4px 40px rgba(128, 0, 128, 0.3);
+}
+
+/* LOGO */
+.logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  text-align: start;
+}
+
+.logo span {
+  color: #d580ff;
+}
+
+/* NAV LINKS */
+.nav-links-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.25s;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: #d580ff;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #fff;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* BUTTONS */
+.nav-btns {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(200, 100, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-outline:hover {
+  border-color: #d580ff;
+  color: #fff;
+  background: rgba(213, 128, 255, 0.08);
+}
+
+.btn-fill {
+  background: linear-gradient(135deg, #8000ff 0%, #c840ff 100%);
+  color: #fff;
+}
+
+.btn-fill:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(180, 0, 255, 0.35);
+}
+
+/* ───────────────────────────── */
+/* ── FOOTER ── */
+/* ───────────────────────────── */
+
+footer {
+  background: linear-gradient(
+    147deg,
+    rgba(0, 0, 0, 0.97) 28%,
+    rgba(0, 0, 128, 0.92) 100%
+  );
+  border-top: 1px solid rgba(200, 100, 255, 0.15);
+  padding: 4rem 2rem 0;
+  font-family: "Bebas Neue", sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* LAYOUT GRID */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  gap: 2.5rem;
+
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(200, 100, 255, 0.12);
+}
+
+/* BRAND SECTION */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand .logo {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand .logo span {
+  color: #d580ff;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 1.5rem;
+  align-self: start;
+}
+
+/* EMAIL FORM */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  max-width: 280px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.footer-form input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(200, 100, 255, 0.25);
+  border-radius: 50px;
+  padding: 0.55rem 1rem;
+  color: #fff;
+  outline: none;
+  font-size: 0.85rem;
+}
+
+.footer-form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-form input:focus {
+  border-color: #d580ff;
+  background: rgba(213, 128, 255, 0.08);
+}
+
+/* SOCIAL LINKS */
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a img {
+  width: 60px;
+  height: 60px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.social-links a img:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* NAV LINKS */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: rgb(0, 0, 128);
+  margin-bottom: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-links ul li a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.25s;
+}
+
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+/* CONTACT */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1rem;
+}
+
+.contact-item img {
+  width: 28px;
+  height: 28px;
+}
+
+.contact-item:hover {
+  color: #fff;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ───────────────────────────── */
+/* ── RESPONSIVE ── */
+/* ───────────────────────────── */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .nav-bar {
+    padding: 0 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.8rem;
+  }
+
+  .nav-btns {
+    display: none; /* remove buttons */
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-bar {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-links-wrap {
+    position: static;
+    transform: none;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.7rem;
+  }
+
+  footer {
+    padding: 3rem 1rem 0;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    align-items: center;
+  }
+
+  .footer-contact {
+    align-items: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,245 @@
+/* ── RESET ── */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── BODY ── */
+body {
+  background: radial-gradient(circle at top, #1a0f1f, #0b0b10);
+  color: #eaeaf0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── HEADINGS ── */
+h1, h2, h3, .heading {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* ── GRID LAYOUT ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 6rem auto 3rem auto; /* FIXED */
+  width: 100%;
+}
+
+/* ── CARD ── */
+.card {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 128, 1) 55%, rgba(0, 0, 0, 1) 100%);
+  border-radius: 12px;
+  padding: 1.75rem;
+  width: 100%;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(0, 0, 128, 1);
+  margin-bottom: 1.25rem;
+}
+
+/* ── RIGHT COLUMN ── */
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── FORM ── */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: #f5f0e8;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* ── BUTTON ── */
+.btn-send {
+  display: block;
+  width: 100%;
+  color: white;
+  background: linear-gradient(147deg, rgba(0, 0, 0, 1) 28%, rgba(0, 0, 128, 1) 61%);
+  background-size: 200% 200%;
+  background-position: left;
+  border-radius: 15px;
+  border: solid black 1px;
+  padding: 10px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease, background-position 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-send:hover {
+  background-position: right;
+  border-radius: 20px;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn-send:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ── CONTACT INFO ── */
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.icon-circle {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle svg {
+  width: 16px;
+  height: 16px;
+  stroke: #aaa;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.info-text p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.15rem;
+}
+
+.info-text .info-label {
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.info-text .info-sub {
+  font-size: 0.82rem;
+  color: #fff;
+}
+
+.info-value {
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.info-value:hover {
+  color: rgba(128, 0, 128, 1);
+}
+
+/* ── FOLLOW SECTION ── */
+.follow-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgba(0, 0, 128, 1);
+  margin-bottom: 0.5rem;
+}
+
+.follow-card p {
+  font-size: 0.875rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap; /* FIX */
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── RESPONSIVE BREAKPOINTS ── */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 0 0.8rem;
+  }
+
+  .grid {
+    margin: 5rem auto 2rem auto;
+  }
+
+  .card {
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .btn-send {
+    padding: 9px 14px;
+    font-size: 0.9rem;
+  }
+
+  .info-row {
+    gap: 0.7rem;
+  }
+
+  .icon-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .info-text p {
+    font-size: 0.8rem;
+  }
+}
