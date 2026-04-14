@@ -408,32 +408,6 @@ a {
   margin: 0 auto;
 }
 
-/* Close button */
-.popup-close-btn {
-  display: none;
-  margin-top: 1.75rem;
-  background: linear-gradient(135deg, #000 20%, var(--navy) 100%);
-  color: #fff;
-  border: 1px solid rgba(120, 120, 255, 0.3);
-  border-radius: var(--radius-sm);
-  padding: 10px 32px;
-  font-size: 0.9rem;
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-radius var(--transition);
-  letter-spacing: 0.3px;
-}
-
-.popup-close-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 200, 0.4);
-  border-radius: 12px;
-}
-
-.popup-close-btn:active {
-  transform: translateY(0);
-}
-
 /* ═══════════════════════════════════════════
    RESPONSIVE — TABLET (≤ 1024px)
 ═══════════════════════════════════════════ */
