@@ -225,6 +225,53 @@
         </div>
     </footer>
 
+    <!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <div class="spinner" id="popup-spinner"></div>
+    <div class="checkmark" id="popup-check">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <p class="popup-title" id="popup-title">Submitting...</p>
+    <p class="popup-msg" id="popup-msg">Please wait while we send your message.</p>
+    <button class="popup-close" id="popup-close-btn" onclick="closePopup()">Got it</button>
+  </div>
+</div>
+
+<script>
+  const sendBtn = document.querySelector('.btn-send');
+
+  sendBtn.addEventListener('click', function () {
+    // Show popup in loading state
+    document.getElementById('popup').classList.add('active');
+    document.getElementById('popup-spinner').style.display = 'block';
+    document.getElementById('popup-check').style.display = 'none';
+    document.getElementById('popup-title').textContent = 'Submitting...';
+    document.getElementById('popup-msg').textContent = 'Please wait while we send your message.';
+    document.getElementById('popup-close-btn').style.display = 'none';
+
+    // Simulate submission delay (replace with real fetch/API call if needed)
+    setTimeout(function () {
+      document.getElementById('popup-spinner').style.display = 'none';
+      document.getElementById('popup-check').style.display = 'flex';
+      document.getElementById('popup-title').textContent = 'Message Sent!';
+      document.getElementById('popup-msg').textContent =
+        'Thanks for contacting us, we will get back to you soon.';
+      document.getElementById('popup-close-btn').style.display = 'inline-block';
+    }, 2000);
+  });
+
+  function closePopup() {
+    document.getElementById('popup').classList.remove('active');
+  }
+
+  // Close on overlay click
+  document.getElementById('popup').addEventListener('click', function (e) {
+    if (e.target === this) closePopup();
+  });
+</script>
+
+
 </body>
 
 </html>
